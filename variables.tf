@@ -115,6 +115,12 @@ variable "alarm_memory_threshold_bytes" {
   description = "Ram threshold alarm level"
 }
 
+variable "alarm_swapusage_threshold_bytes" {
+  type        = number
+  default     = 50000000
+  description = "Swapusage threshold alarm level"
+}
+
 variable "alarm_actions" {
   type        = list(string)
   description = "Alarm action list"
