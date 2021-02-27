@@ -118,7 +118,7 @@ resource "aws_elasticache_replication_group" "default" {
 # CloudWatch Resources
 #
 resource "aws_cloudwatch_metric_alarm" "cache_cpu" {
-  count               = module.this.enabled && var.cloudwatch_metric_alarms_enabled && var.alarm_memory_threshold_bytes != 0? local.member_clusters_count : 0
+  count               = module.this.enabled && var.cloudwatch_metric_alarms_enabled && var.alarm_cpu_threshold_bytes != 0? local.member_clusters_count : 0
   alarm_name          = "${element(local.elasticache_member_clusters, count.index)}-cpu-utilization"
   alarm_description   = "Redis cluster CPU utilization"
   comparison_operator = "GreaterThanThreshold"
